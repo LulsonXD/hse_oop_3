@@ -806,19 +806,22 @@ int main() {
     assert(calculator.size() == 2);
     ComplexNumber* resultSubtractQC = calculator.top();
     assert(resultSubtractQC->getKind() == CK_QUATERNION);
-    assert(*(Quaternion*)resultSubtractQC == q1 - *(Quaternion*)resultSubtractCC);
+    assert(*(Quaternion*)resultSubtractQC ==
+        q1 - *(Quaternion*)resultSubtractCC);
     calculator.push(c2);
     calculator.calculate(OP_SUBTRACT);
     assert(calculator.size() == 2);
     ComplexNumber* resultSubtractCQ = calculator.top();
     assert(resultSubtractCQ->getKind() == CK_QUATERNION);
-    assert(*(Quaternion*)resultSubtractCQ == c2 - *(Quaternion*)resultSubtractQC);
+    assert(*(Quaternion*)resultSubtractCQ ==
+        c2 - *(Quaternion*)resultSubtractQC);
     calculator.push(q2);
     calculator.calculate(OP_SUBTRACT);
     assert(calculator.size() == 2);
     ComplexNumber* resultSubtractQQ = calculator.top();
     assert(resultSubtractQQ->getKind() == CK_QUATERNION);
-    assert(*(Quaternion*)resultSubtractQQ == q2 - *(Quaternion*)resultSubtractCQ);
+    assert(*(Quaternion*)resultSubtractQQ ==
+        q2 - *(Quaternion*)resultSubtractCQ);
 
     calculator.push(c2);
     calculator.push(c1);
@@ -832,19 +835,22 @@ int main() {
     assert(calculator.size() == 3);
     ComplexNumber* resultMultiplyQC = calculator.top();
     assert(resultMultiplyQC->getKind() == CK_QUATERNION);
-    assert(*(Quaternion*)resultMultiplyQC == q1 * *(Quaternion*)resultMultiplyCC);
+    assert(*(Quaternion*)resultMultiplyQC ==
+        q1 * *(Quaternion*)resultMultiplyCC);
     calculator.push(c2);
     calculator.calculate(OP_MULTIPLY);
     assert(calculator.size() == 3);
     ComplexNumber* resultMultiplyCQ = calculator.top();
     assert(resultMultiplyCQ->getKind() == CK_QUATERNION);
-    assert(*(Quaternion*)resultMultiplyCQ == c2 * *(Quaternion*)resultMultiplyQC);
+    assert(*(Quaternion*)resultMultiplyCQ ==
+        c2 * *(Quaternion*)resultMultiplyQC);
     calculator.push(q2);
     calculator.calculate(OP_MULTIPLY);
     assert(calculator.size() == 3);
     ComplexNumber* resultMultiplyQQ = calculator.top();
     assert(resultMultiplyQQ->getKind() == CK_QUATERNION);
-    assert(*(Quaternion*)resultMultiplyQQ == q2 * *(Quaternion*)resultMultiplyCQ);
+    assert(*(Quaternion*)resultMultiplyQQ ==
+        q2 * *(Quaternion*)resultMultiplyCQ);
 
     calculator.push(c2);
     calculator.push(c1);
